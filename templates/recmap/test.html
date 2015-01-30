@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Teste{% endblock %}
+
+{% block head %}
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAPQDn0IzFxC1lOe_Ipg9hcY6jZ78EQVKU&sensor=true"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+    <script src="{% static 'recrecife/js/gmaps.js' %}"></script>
+    <script src="{% static 'recrecife/js/recrecife.js' %}"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('#pac-input').on('keyup', function() {
+
+        $.ajax({
+            url: '?q=' + $('#pac-input').val(),
+            success: function(data) {
+                var query = $(data).filter('#testing').html();
+                $('#testing').html(query);
+            }
+        });
+
+    });
+});
+    </script>
+
+{% endblock %}
+
+{% block body-args %}
+    onload='initializeGMAP();'
+{% endblock %}
+
+{% block body %}
+    <div id="testing">
+        <div>hey, {{ query }}</div>
+    </div>
+    <form method="GET">
+        {% csrf_token %}
+        <input id="pac-input" class="controls" type="text" placeholder="Pesquisar..." name="q" autocomplete="off">
+    </form>
+    <div id="map_canvas"></div>
+{% endblock %}
