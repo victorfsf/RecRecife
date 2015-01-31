@@ -111,17 +111,32 @@
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="endereco_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="setor_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="rota" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_recmap_coleta_1" columns="setor_id" ref-table="recmap_setor" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_recmap_coleta_2" columns="endereco_id" ref-table="recmap_endereco" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="recmap_coleta_90f89678" unique="true" columns="setor_id"/>
-      <index name="recmap_coleta_5f6f0b92" unique="true" columns="endereco_id"/>
+      <exported-key name="#FAKE_recmap_coletahorario_2" table="recmap_coletahorario" schema="" catalog="" columns="coleta_id"/>
+      <index name="recmap_coleta_20c9a878" unique="true" columns="setor_id"/>
+      <index name="recmap_coleta_656d9b16" unique="true" columns="endereco_id"/>
+    </table>
+    <table name="recmap_coletahorario" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="coleta_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="horario_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_recmap_coletahorario_1" columns="horario_id" ref-table="recmap_horario" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_recmap_coletahorario_2" columns="coleta_id" ref-table="recmap_coleta" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="recmap_coletahorario_6e64cd21" unique="true" columns="horario_id"/>
+      <index name="recmap_coletahorario_a1f0eecb" unique="true" columns="coleta_id"/>
     </table>
     <table name="recmap_endereco" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="latitude" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="longitude" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="nome" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="nome" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="csv_nome" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="p_nome" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="bairro" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="latitude" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="longitude" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_recmap_coleta_2" table="recmap_coleta" schema="" catalog="" columns="endereco_id"/>
     </table>
@@ -130,25 +145,7 @@
       <column name="turno" sqlType="VARCHAR(15)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="intervalo" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <exported-key name="#FAKE_recmap_horariosetor_2" table="recmap_horariosetor" schema="" catalog="" columns="intervalo_id"/>
-    </table>
-    <table name="recmap_horariosetor" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="intervalo_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="setor_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_recmap_horariosetor_1" columns="setor_id" ref-table="recmap_setor" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_recmap_horariosetor_2" columns="intervalo_id" ref-table="recmap_horario" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="recmap_horariosetor_90f89678" unique="true" columns="setor_id"/>
-      <index name="recmap_horariosetor_8fc37672" unique="true" columns="intervalo_id"/>
-    </table>
-    <table name="recmap_rota" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="rota" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="setor_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_recmap_rota_1" columns="setor_id" ref-table="recmap_setor" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="recmap_rota_90f89678" unique="true" columns="setor_id"/>
+      <exported-key name="#FAKE_recmap_coletahorario_1" table="recmap_coletahorario" schema="" catalog="" columns="horario_id"/>
     </table>
     <table name="recmap_setor" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
@@ -156,8 +153,6 @@
       <column name="frequencia" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_recmap_coleta_1" table="recmap_coleta" schema="" catalog="" columns="setor_id"/>
-      <exported-key name="#FAKE_recmap_horariosetor_1" table="recmap_horariosetor" schema="" catalog="" columns="setor_id"/>
-      <exported-key name="#FAKE_recmap_rota_1" table="recmap_rota" schema="" catalog="" columns="setor_id"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>

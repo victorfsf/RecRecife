@@ -6,7 +6,7 @@ from django.db import models
 class Endereco(models.Model):
     csv_nome = models.CharField(max_length=100)
     p_nome = models.CharField(max_length=200)
-    nome = models.CharField(max_length=200)
+    nome = models.CharField(max_length=200, unique=True)
     bairro = models.CharField(max_length=200)
     latitude = models.FloatField()
     longitude = models.FloatField()
@@ -32,7 +32,7 @@ class Horario(models.Model):
 
 
 class Setor(models.Model):
-    nome = models.CharField(max_length=10, unique=True)
+    nome = models.CharField(max_length=10)
     frequencia = models.CharField(max_length=20)
 
     def __unicode__(self):
@@ -43,22 +43,10 @@ class Setor(models.Model):
         verbose_name_plural = u'setores'
 
 
-class HorarioSetor(models.Model):
-    intervalo = models.ForeignKey(Horario)
-    setor = models.ForeignKey(Setor)
-
-    def __unicode__(self):
-        return unicode(self.intervalo) + u' - ' + unicode(self.setor)
-
-    class Meta:
-        verbose_name = u'horário/Setor'
-        verbose_name_plural = u'horário/Setores'
-
-
 class Coleta(models.Model):
     endereco = models.ForeignKey(Endereco)
-    rota = models.IntegerField(max_length=5)
     setor = models.ForeignKey(Setor)
+    rota = models.IntegerField(max_length=5)
 
     def __unicode__(self):
         return unicode(self.endereco) + u' - ' + unicode(self.setor) + u', Rota: ' + unicode(self.rota)
@@ -66,3 +54,16 @@ class Coleta(models.Model):
     class Meta:
         verbose_name = u'coleta'
         verbose_name_plural = u'coletas'
+
+
+class ColetaHorario(models.Model):
+    coleta = models.ForeignKey(Coleta)
+    horario = models.ForeignKey(Horario)
+
+    def __unicode__(self):
+        return unicode(self.coleta) + u' - ' + unicode(self.horario)
+
+    class Meta:
+        verbose_name = u'coleta/Horário'
+        verbose_name_plural = u'coleta/horários'
+

@@ -4,40 +4,61 @@
 {% block title %}Teste{% endblock %}
 
 {% block head %}
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAPQDn0IzFxC1lOe_Ipg9hcY6jZ78EQVKU&sensor=true"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_SECRET_KEY }}&sensor=true"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
-    <script src="{% static 'recrecife/js/gmaps.js' %}"></script>
     <script src="{% static 'recrecife/js/recrecife.js' %}"></script>
 
     <script type="text/javascript">
-    $(document).ready(function() {
-    $('#pac-input').on('keyup', function() {
-
-        $.ajax({
-            url: '?q=' + $('#pac-input').val(),
-            success: function(data) {
-                var query = $(data).filter('#testing').html();
-                $('#testing').html(query);
-            }
-        });
-
-    });
-});
+        loadMarkers({{ markers|safe }}, '{% static 'recrecife/images/recycle_marker.png' %}');
     </script>
 
 {% endblock %}
 
 {% block body-args %}
-    onload='initializeGMAP();'
+    onload='initializeGMAP("{% static 'marker-clusterer/src/markerclusterer_compiled.js' %}");'
 {% endblock %}
 
 {% block body %}
-    <div id="testing">
-        <div>hey, {{ query }}</div>
-    </div>
-    <form method="GET">
-        {% csrf_token %}
-        <input id="pac-input" class="controls" type="text" placeholder="Pesquisar..." name="q" autocomplete="off">
-    </form>
     <div id="map_canvas"></div>
+    <div class="rec-opaque" id="map_overlay"></div>
+    <div class="rec-content text-center" id="map_overlay_content">
+        <div class="col-lg-4 col-lg-offset-3">
+            <span class="input-group">
+                <span class="input-group-addon"></span>
+                <input type="text" placeholder="Pesquisar rua, avenida, travessa..." autocomplete="off" class="form-control form-rec" id="searchBar" maxlength="200"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="searchBtn">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                </span>
+            </span>
+            <div class="panel panel-default panel-dropdown" id="dropdown_choices">
+                <ul class="panel-list truncate-line">
+                    {% if enderecos and enderecos|length > 0 %}
+                        {% for endereco in enderecos %}
+                            <li><a href="javascript:void(0);" onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }})">
+                                <span class="glyphicon glyphicon-road"></span> &nbsp;{{ endereco.nome }}
+                            </a></li>
+                        {% endfor %}
+                    {% elif query_data %}
+                        <li class="bad-location"><a href="javascript:void(0);" onclick="mapSearchByName('{{ query_data|safe }} RECIFE PERNAMBUCO', '{% static 'recrecife/images/no_recycle_marker.png' %}')">
+                            <span class="glyphicon glyphicon-new-window"></span> &nbsp;{{ query_data }}
+                        </a></li>
+                    {% else %}
+                        <li class="bad-location"><a href="javascript:void(0);">
+                            <span class="glyphicon glyphicon-search"></span> &nbsp;O campo de pesquisa está vazio!
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-primary" type="button" onclick="gotoGMaps();" id="mapBtn">PESQUISAR NO MAPA</button>
+        </div>
+        <div class="col-lg-4 col-lg-offset-4" style="margin-top:20px;">
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
 {% endblock %}
