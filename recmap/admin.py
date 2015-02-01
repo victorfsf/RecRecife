@@ -32,7 +32,7 @@ class ColetaAdmin(admin.ModelAdmin):
     )
 
     list_display = ('endereco', 'setor', 'rota',)
-    search_fields = ('endereco', 'setor', 'rota',)
+    search_fields = ('endereco__nome', 'endereco__bairro', 'setor__nome', 'setor__frequencia', 'rota',)
 
 
 class ColetaHorarioAdmin(admin.ModelAdmin):
@@ -42,7 +42,7 @@ class ColetaHorarioAdmin(admin.ModelAdmin):
     )
 
     list_display = ('coleta', 'horario',)
-    search_fields = ('coleta', 'horario',)
+    search_fields = ('coleta__endereco__nome', 'coleta__endereco__bairro', 'horario__turno', 'horario__intervalo')
 
 
 class SetorAdmin(admin.ModelAdmin):
@@ -59,4 +59,4 @@ admin.site.register(Endereco, EnderecoAdmin)
 admin.site.register(Horario, HorarioAdmin)
 admin.site.register(Coleta, ColetaAdmin)
 admin.site.register(Setor, SetorAdmin)
-admin.site.register(ColetaHorario)
+admin.site.register(ColetaHorario, ColetaHorarioAdmin)

@@ -25,7 +25,7 @@
         <div class="col-lg-4 col-lg-offset-3">
             <span class="input-group">
                 <span class="input-group-addon"></span>
-                <input type="text" placeholder="Pesquisar rua, avenida, travessa..." autocomplete="off" class="form-control form-rec" id="searchBar" maxlength="200"/>
+                <input type="text" placeholder="Pesquisar rua, avenida, praça, estrada, travessa..." autocomplete="off" class="form-control form-rec" id="searchBar" maxlength="200"/>
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default" id="searchBtn">
                         <span class="glyphicon glyphicon-chevron-down"></span>
@@ -36,10 +36,19 @@
                 <ul class="panel-list truncate-line">
                     {% if enderecos and enderecos|length > 0 %}
                         {% for endereco in enderecos %}
-                            <li><a href="javascript:void(0);" onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }})">
-                                <span class="glyphicon glyphicon-road"></span> &nbsp;{{ endereco.nome }}
+                            {% if endereco.nome == endereco.csv_nome %}
+                            <li class="bad-location"><a href="javascript:void(0);" onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
+                                <span class="glyphicon glyphicon-question-sign"></span> &nbsp;{{ endereco.nome }}
                             </a></li>
+                            {% else %}
+                                <li><a href="javascript:void(0);" onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
+                                    <span class="glyphicon glyphicon-road"></span> &nbsp;{{ endereco.nome }}
+                                </a></li>
+                            {% endif %}
                         {% endfor %}
+                            <li class="bad-location"><a href="javascript:void(0);" onclick="mapSearchByName('{{ query_data|safe }} RECIFE PERNAMBUCO', '{% static 'recrecife/images/no_recycle_marker.png' %}')">
+                                <span class="glyphicon glyphicon-new-window"></span> &nbsp;{{ query_data }}
+                            </a></li>
                     {% elif query_data %}
                         <li class="bad-location"><a href="javascript:void(0);" onclick="mapSearchByName('{{ query_data|safe }} RECIFE PERNAMBUCO', '{% static 'recrecife/images/no_recycle_marker.png' %}')">
                             <span class="glyphicon glyphicon-new-window"></span> &nbsp;{{ query_data }}

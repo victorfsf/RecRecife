@@ -22,6 +22,10 @@ $(document).ready(function () {
         dropdown_choices.hide();
     });
 
+    map_overlay.click(function () {
+        dropdown_choices.hide();
+    });
+
     //END GOOGLEMAPS
 
     search_bar.on('keyup', function (e) {
@@ -34,8 +38,12 @@ $(document).ready(function () {
         }
     });
 
+    search_bar.on('click', function() {
+       search_btn.click();
+    });
+
     search_btn.on('click', function () {
-        var choices = dropdown_choices;
+        var choices = $('#dropdown_choices');
 
         if (choices.is(':visible')) {
             choices.hide();
@@ -106,9 +114,11 @@ function require(script) {
     });
 }
 
-function mapSearch(lat, lng) {
+function mapSearch(lat, lng, local) {
     var map_overlay = $('#map_overlay').is(':visible');
     var point;
+
+    $('#searchBar').val(local);
 
     if (map_overlay) {
         return;
@@ -117,7 +127,7 @@ function mapSearch(lat, lng) {
     point = new google.maps.LatLng(lat, lng);
 
     map.setCenter(point);
-    map.setZoom(16);
+    map.setZoom(18);
 }
 
 function mapSearchByName(query_data, marker_img) {
@@ -126,6 +136,8 @@ function mapSearchByName(query_data, marker_img) {
     if (map_overlay) {
         return;
     }
+
+    $('#searchBar').val(query_data.replace(' RECIFE PERNAMBUCO', ''));
 
     geocoder.geocode({'address': query_data}, function (results, status) {
 
@@ -156,7 +168,7 @@ function mapSearchByName(query_data, marker_img) {
             tmp_markers++;
 
             markers.push(marker);
-            map.setZoom(16);
+            map.setZoom(18);
         } else {
             alert("Geocode was not successful for the following reason: " + status);
         }
@@ -167,22 +179,26 @@ function loadMarkers(m_list, marker_img) {
     for (var i = 0; i < m_list.length; i++) {
         var point = new google.maps.LatLng(m_list[i].latitude, m_list[i].longitude);
 
-        var image = {
-            url: marker_img,
-            size: new google.maps.Size(30, 36),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(30, 36)
-        };
+        if (!(m_list[i].latitude == -8.0578381 && m_list[i].longitude == -34.8828969)) {
 
-        var marker = new google.maps.Marker({
-            icon: image,
-            position: point,
-            map: map,
-            title: m_list[i].nome
-        });
-        markers.push(marker);
+            var image = {
+                url: marker_img,
+                size: new google.maps.Size(30, 36),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(30, 36)
+            };
+
+            var marker = new google.maps.Marker({
+                icon: image,
+                position: point,
+                map: map,
+                title: m_list[i].nome
+            });
+            markers.push(marker);
+        }
     }
+
 }
 
 function initializeGMAP(cluster_js) {
