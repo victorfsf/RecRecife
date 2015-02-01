@@ -11,16 +11,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RenameField(
             model_name='endereco',
-            name='latitude',
-            field=models.FloatField(),
-            preserve_default=True,
+            old_name='csv_nome',
+            new_name='nome_bruto',
         ),
-        migrations.AlterField(
+        migrations.RenameField(
             model_name='endereco',
-            name='longitude',
-            field=models.FloatField(),
-            preserve_default=True,
+            old_name='p_nome',
+            new_name='nome_min',
         ),
     ]

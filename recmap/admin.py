@@ -1,18 +1,18 @@
 # -*- encoding: utf-8 -*-
 
 from django.contrib import admin
-from recmap.models import Endereco, Horario, Coleta, Setor, ColetaHorario
+from recmap.models import Endereco, Horario, Coleta, Setor, ColetaHorario, Feedback
 
 
 class EnderecoAdmin(admin.ModelAdmin):
 
     fieldsets = (
-        (u'Nome da Rua', {'fields': ('csv_nome', 'p_nome', 'nome')}),
+        (u'Nome da Rua', {'fields': ('nome_bruto', 'nome_min', 'nome')}),
         (u'Bairro / Geolocalização', {'fields': ('bairro', 'latitude', 'longitude')}),
     )
 
-    list_display = ('nome', 'bairro', 'latitude', 'longitude', 'csv_nome')
-    search_fields = ('nome', 'bairro', 'latitude', 'longitude', 'csv_nome', 'p_nome')
+    list_display = ('nome', 'bairro', 'latitude', 'longitude', 'nome_bruto')
+    search_fields = ('nome', 'bairro', 'latitude', 'longitude', 'nome_bruto', 'nome_min')
 
 
 class HorarioAdmin(admin.ModelAdmin):
@@ -32,7 +32,7 @@ class ColetaAdmin(admin.ModelAdmin):
     )
 
     list_display = ('endereco', 'setor', 'rota',)
-    search_fields = ('endereco__nome', 'endereco__bairro', 'setor__nome', 'setor__frequencia', 'rota',)
+    search_fields = ('endereco__nome', 'endereco__bairro', 'setor__nome_setor', 'setor__frequencia', 'rota',)
 
 
 class ColetaHorarioAdmin(admin.ModelAdmin):
@@ -48,11 +48,21 @@ class ColetaHorarioAdmin(admin.ModelAdmin):
 class SetorAdmin(admin.ModelAdmin):
 
     fieldsets = (
-        (u'Informações', {'fields': ('nome', 'frequencia',)}),
+        (u'Informações', {'fields': ('nome_setor', 'frequencia',)}),
     )
 
-    list_display = ('nome', 'frequencia',)
-    search_fields = ('nome', 'frequencia',)
+    list_display = ('nome_setor', 'frequencia',)
+    search_fields = ('nome_setor', 'frequencia',)
+
+
+class FeedbackAdmin(admin.ModelAdmin):
+
+    fieldsets = (
+        (u'Informações', {'fields': ('enviado_por', 'email', 'situacao', 'descricao',)}),
+    )
+
+    list_display = ('enviado_por', 'email', 'situacao', 'descricao',)
+    search_fields = ('nome', 'email', 'situacao', 'descricao',)
 
 
 admin.site.register(Endereco, EnderecoAdmin)
@@ -60,3 +70,4 @@ admin.site.register(Horario, HorarioAdmin)
 admin.site.register(Coleta, ColetaAdmin)
 admin.site.register(Setor, SetorAdmin)
 admin.site.register(ColetaHorario, ColetaHorarioAdmin)
+admin.site.register(Feedback, FeedbackAdmin)

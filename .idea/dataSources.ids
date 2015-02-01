@@ -131,12 +131,12 @@
     </table>
     <table name="recmap_endereco" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="nome_bruto" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="nome" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="csv_nome" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="p_nome" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="bairro" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="latitude" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
       <column name="longitude" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="nome_min" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_recmap_coleta_2" table="recmap_coleta" schema="" catalog="" columns="endereco_id"/>
     </table>
@@ -149,7 +149,7 @@
     </table>
     <table name="recmap_setor" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="nome" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="nome_setor" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="frequencia" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_recmap_coleta_1" table="recmap_coleta" schema="" catalog="" columns="setor_id"/>
