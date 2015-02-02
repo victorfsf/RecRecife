@@ -270,6 +270,18 @@ a:hover, a:focus {
     background: #fabe28;
 }
 
+.panel-rec .panel-footer {
+    width: 100%;
+    margin-top: -10px;
+    border: 0;
+    border-bottom: 3px solid #2a8f53;
+    background: #289e65;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 0;
+}
+
 .panel-rec-warn .panel-footer {
     width: 100%;
     margin-top: -10px;

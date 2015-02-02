@@ -58,11 +58,11 @@ class SetorAdmin(admin.ModelAdmin):
 class FeedbackAdmin(admin.ModelAdmin):
 
     fieldsets = (
-        (u'Informações', {'fields': ('enviado_por', 'email', 'situacao', 'descricao',)}),
+        (u'Informações', {'fields': ('enviado_por', 'email', 'situacao', 'descricao','endereco', )}),
     )
 
-    list_display = ('enviado_por', 'email', 'situacao', 'descricao',)
-    search_fields = ('nome', 'email', 'situacao', 'descricao',)
+    list_display = ('endereco', 'enviado_por', 'email', 'situacao', 'descricao',)
+    search_fields = ('endereco__nome', 'nome', 'email', 'situacao', 'descricao',)
 
 
 admin.site.register(Endereco, EnderecoAdmin)

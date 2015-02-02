@@ -13,6 +13,7 @@ import json
 
 def view_index(request):
     args = {}
+
     enderecos = None
     q = None
     enderecos_json = []
@@ -25,12 +26,13 @@ def view_index(request):
         feedback_form = FeedbackForm(data=request.POST)
 
         if feedback_form.is_valid():
+            local_nome = request.POST.get('enderecoObj')
 
             feedback = feedback_form.save(commit=False)
 
             feedback.situacao = feedback_form.cleaned_data.get('erros')
             feedback.enviado_por = feedback_form.cleaned_data.get('nome')
-
+            feedback.endereco = Endereco.objects.get(nome=local_nome)
             feedback.save()
 
         return HttpResponseRedirect(reverse('index') + '?s=1')

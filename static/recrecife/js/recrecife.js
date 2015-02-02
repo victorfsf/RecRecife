@@ -205,6 +205,7 @@ function showInfoPanel(local) {
 }
 
 function showNothingFoundPanel(query_data) {
+
     $.ajax({
         url: '?q=' + query_data,
         success: function (data) {
@@ -212,6 +213,7 @@ function showNothingFoundPanel(query_data) {
             var info = $('#noInfoPanel', data).html();
             localInfo.html(info);
             localInfo.show();
+             $('#infoPanel').hide();
         }
     });
 }
