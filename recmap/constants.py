@@ -8,6 +8,6 @@ escolhas_feedbackForm = [
     u'O nome do local e seu valor bruto são diferentes',
     u'Este local não possui coleta seletiva',
     u'Este local não existe',
-    u'Eu conheço esta rua (janela vermelha)',
+    u'Este local está endereçado de forma incorreta',
     u'Outro...',
 ]

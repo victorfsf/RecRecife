@@ -9,12 +9,12 @@ $(document).ready(function () {
     var map_overlay = $("#map_overlay");
     var map_canvas = $("#map_canvas");
 
-    map_canvas.css("height", $(window).height() - 70);
-    map_overlay.css("height", $(window).height() - 70);
+    map_canvas.css("height", $(window).height());
+    map_overlay.css("height", $(window).height());
 
     $(window).resize(function () {
-        $("#map_canvas").css("height", $(window).height() - 70);
-        $("#map_overlay").css("height", $(window).height() - 70);
+        $("#map_canvas").css("height", $(window).height());
+        $("#map_overlay").css("height", $(window).height());
         map.checkResize();
     });
 
@@ -80,6 +80,16 @@ $(document).ready(function () {
     }
 });
 
+function startApp() {
+    $('#startInfo').fadeOut(400);
+    $('#mapPanel').fadeIn(400);
+}
+
+function infoSearch(query_data, marker_img) {
+    $('#map_overlay').hide();
+    $('#noInfoPanel').hide();
+    mapSearchByName(query_data, marker_img)
+}
 
 function gotoGMaps() {
     var map_overlay = $('#map_overlay');
@@ -94,6 +104,7 @@ function gotoGMaps() {
     } else {
         map_overlay.fadeIn(400);
         map_btn.text('PESQUISAR NO MAPA');
+        $('#noInfoPanel').hide();
 
         map.setCenter(recife);
         map.setZoom(13);
@@ -193,6 +204,18 @@ function showInfoPanel(local) {
     });
 }
 
+function showNothingFoundPanel(query_data) {
+    $.ajax({
+        url: '?q=' + query_data,
+        success: function (data) {
+            var localInfo = $('#noInfoPanel');
+            var info = $('#noInfoPanel', data).html();
+            localInfo.html(info);
+            localInfo.show();
+        }
+    });
+}
+
 function mapSearch(lat, lng, local) {
     var map_overlay = $('#map_overlay').is(':visible');
     var search_bar = $('#searchBar');
@@ -222,6 +245,7 @@ function mapSearchByName(query_data, marker_img) {
     var map_overlay = $('#map_overlay').is(':visible');
 
     if (map_overlay) {
+        showNothingFoundPanel(query_data);
         return;
     }
 

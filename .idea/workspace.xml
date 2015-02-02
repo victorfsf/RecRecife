@@ -66,34 +66,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recmap/admin.py">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/recmap/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1170">
-              <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
+            <state vertical-scroll-proportion="-5.5416665" vertical-offset="407" max-vertical-offset="3960">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding>
-                <element signature="e#27#59#0" expanded="true" />
+                <element signature="e#11445#11470#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recmap/models.py">
+      <file leaf-file-name="coleta_seletiva.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coleta_seletiva.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="700" max-vertical-offset="1410">
-              <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/recmap/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5833333" vertical-offset="2254" max-vertical-offset="2910">
-              <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1905">
+              <caret line="104" column="66" selection-start-line="104" selection-start-column="66" selection-end-line="104" selection-end-column="66" />
+              <folding>
+                <element signature="e#27#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,21 +93,47 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recmap/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="1500">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="1770">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="e#27#62#0" expanded="true" />
-                <marker date="1422831287162" expanded="true" signature="668:944" placeholder="SELECT nome,..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1000:1001" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1339" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1438" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1527" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1754" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1755" placeholder="SELECT * FRO..recmap_endereco..." />
-                <marker date="1422831287162" expanded="true" signature="1151:1759" placeholder="SELECT * FRO..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="1285:2043" placeholder="SELECT DISTI..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT DISTI..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT nome,..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="1285:2090" placeholder="SELECT nome,..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="1285:2140" placeholder="SELECT nome,..recmap_endereco..." />
+                <marker date="1422880917263" expanded="true" signature="2346:2954" placeholder="SELECT nome,..recmap_endereco..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecRecife/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1650">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="42" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="povoamento.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/povoamento.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recmap/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.13673806" vertical-offset="818" max-vertical-offset="1425">
+              <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,8 +151,18 @@
       <file leaf-file-name="recrecife.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/recrecife/js/recrecife.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="4410">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4770">
+              <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recmap/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -143,18 +171,8 @@
       <file leaf-file-name="recrecife.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/recrecife/css/recrecife.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4524" max-vertical-offset="6480">
-              <caret line="320" column="40" selection-start-line="320" selection-start-column="40" selection-end-line="320" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recmap/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63380283" vertical-offset="0" max-vertical-offset="750">
-              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6758" max-vertical-offset="7380">
+              <caret line="469" column="16" selection-start-line="469" selection-start-column="16" selection-end-line="469" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -175,22 +193,22 @@
         <option value="$PROJECT_DIR$/consultas_testes.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/recrecife/js/gmaps.js" />
-        <option value="$PROJECT_DIR$/RecRecife/settings.py" />
         <option value="$PROJECT_DIR$/static/recrecife/csv/roteirizacao.csv" />
         <option value="$PROJECT_DIR$/templates/recmap/test.html" />
-        <option value="$PROJECT_DIR$/coleta_seletiva.py" />
         <option value="$PROJECT_DIR$/recmap/urls.py" />
         <option value="$PROJECT_DIR$/povoamento.py" />
         <option value="$PROJECT_DIR$/recmap/methods.py" />
         <option value="$PROJECT_DIR$/static/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/static/recrecife/css/recrecife.css" />
-        <option value="$PROJECT_DIR$/recmap/constants.py" />
         <option value="$PROJECT_DIR$/recmap/admin.py" />
+        <option value="$PROJECT_DIR$/recmap/constants.py" />
+        <option value="$PROJECT_DIR$/coleta_seletiva.py" />
+        <option value="$PROJECT_DIR$/recmap/forms.py" />
+        <option value="$PROJECT_DIR$/RecRecife/settings.py" />
         <option value="$PROJECT_DIR$/recmap/views.py" />
         <option value="$PROJECT_DIR$/templates/recmap/index.html" />
+        <option value="$PROJECT_DIR$/static/recrecife/css/recrecife.css" />
         <option value="$PROJECT_DIR$/static/recrecife/js/recrecife.js" />
         <option value="$PROJECT_DIR$/recmap/models.py" />
-        <option value="$PROJECT_DIR$/recmap/forms.py" />
       </list>
     </option>
   </component>
@@ -389,46 +407,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecRecife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecRecife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecRecife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecRecife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -781,7 +759,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -789,11 +767,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36929923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17908788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20362474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29365963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34371525" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20575693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19936034" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -802,6 +779,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -832,16 +810,12 @@
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#27#62#0" expanded="true" />
-            <marker date="1422831287162" expanded="true" signature="668:944" placeholder="SELECT nome,..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1000:1001" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1339" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1438" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1527" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1754" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1755" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1759" placeholder="SELECT * FRO..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2043" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2090" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2140" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="2346:2954" placeholder="SELECT nome,..recmap_endereco..." />
           </folding>
         </state>
       </provider>
@@ -887,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="225">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +875,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#27#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -950,16 +925,12 @@
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="e#27#62#0" expanded="true" />
-            <marker date="1422831287162" expanded="true" signature="668:944" placeholder="SELECT nome,..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1000:1001" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1339" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1438" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1527" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1754" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1755" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1759" placeholder="SELECT * FRO..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2043" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2090" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2140" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="2346:2954" placeholder="SELECT nome,..recmap_endereco..." />
           </folding>
         </state>
       </provider>
@@ -968,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="225">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,7 +960,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#27#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,16 +1002,12 @@
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="e#27#62#0" expanded="true" />
-            <marker date="1422831287162" expanded="true" signature="668:944" placeholder="SELECT nome,..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1000:1001" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1339" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1438" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1527" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1754" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1755" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1759" placeholder="SELECT * FRO..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2043" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2090" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2140" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="2346:2954" placeholder="SELECT nome,..recmap_endereco..." />
           </folding>
         </state>
       </provider>
@@ -1114,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecRecife/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1216992" vertical-offset="779" max-vertical-offset="1650">
-          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/recrecife/csv/roteirizacao.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21062271" vertical-offset="57965" max-vertical-offset="75795">
@@ -1149,7 +1109,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1166,46 +1125,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/povoamento.py">
+    <entry file="file://$PROJECT_DIR$/recmap/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18867925" vertical-offset="0" max-vertical-offset="765">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#27#40#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1170">
+          <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coleta_seletiva.py">
+    <entry file="file://$PROJECT_DIR$/recmap/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17605634" vertical-offset="1015" max-vertical-offset="1905">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#27#40#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="810">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recmap/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08450704" vertical-offset="0" max-vertical-offset="710">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/recmap/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5416665" vertical-offset="407" max-vertical-offset="3960">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#11445#11470#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/recrecife/css/recrecife.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4524" max-vertical-offset="6480">
-          <caret line="320" column="40" selection-start-line="320" selection-start-column="40" selection-end-line="320" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6758" max-vertical-offset="7380">
+          <caret line="469" column="16" selection-start-line="469" selection-start-column="16" selection-end-line="469" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/recrecife/js/recrecife.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="4410">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4770">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -1218,56 +1182,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recmap/views.py">
+    <entry file="file://$PROJECT_DIR$/coleta_seletiva.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="1500">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1905">
+          <caret line="104" column="66" selection-start-line="104" selection-start-column="66" selection-end-line="104" selection-end-column="66" />
           <folding>
-            <element signature="e#27#62#0" expanded="true" />
-            <marker date="1422831287162" expanded="true" signature="668:944" placeholder="SELECT nome,..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1000:1001" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1339" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1438" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1527" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1531" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1754" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1755" placeholder="SELECT * FRO..recmap_endereco..." />
-            <marker date="1422831287162" expanded="true" signature="1151:1759" placeholder="SELECT * FRO..recmap_endereco..." />
+            <element signature="e#27#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/recmap/index.html">
+    <entry file="file://$PROJECT_DIR$/recmap/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5833333" vertical-offset="2254" max-vertical-offset="2910">
-          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="1770">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#27#62#0" expanded="true" />
+            <marker date="1422880917263" expanded="true" signature="1285:2043" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT DISTI..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2089" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2090" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="1285:2140" placeholder="SELECT nome,..recmap_endereco..." />
+            <marker date="1422880917263" expanded="true" signature="2346:2954" placeholder="SELECT nome,..recmap_endereco..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecRecife/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1650">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="42" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recmap/admin.py">
+    <entry file="file://$PROJECT_DIR$/povoamento.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1170">
-          <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
-          <folding>
-            <element signature="e#27#59#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recmap/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="700" max-vertical-offset="1410">
-          <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recmap/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63380283" vertical-offset="0" max-vertical-offset="750">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        <state vertical-scroll-proportion="-0.13673806" vertical-offset="818" max-vertical-offset="1425">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
           <folding />
         </state>
       </provider>

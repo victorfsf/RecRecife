@@ -38,9 +38,13 @@ class FeedbackForm(forms.ModelForm):
 
     def clean(self):
         erro_selecionado = self.cleaned_data.get('erros')
+        descricao = self.cleaned_data.get('descricao')
 
         if erro_selecionado == u'Situação do local...':
             raise forms.ValidationError('Seleciona uma situação!', code=0)
+
+        if not ''.join(descricao.split()) and erro_selecionado == u'Outro...':
+            raise forms.ValidationError('Descreva a situação!', code=1)
 
     class Meta:
         model = Feedback

@@ -52,10 +52,10 @@ if __name__ == '__main__':
 
             dias = line[5].split(',')
             for dia in dias:
-                setor = Setor.objects.get_or_create(nome=line[1], frequencia=dias_dict[u''.join(dia.split())])
+                setor = Setor.objects.get_or_create(nome_setor=line[1], frequencia=dias_dict[u''.join(dia.split())])
 
             try:
-                endereco = (Endereco.objects.get(csv_nome=line[2]), False)
+                endereco = (Endereco.objects.get(nome_bruto=line[2]), False)
                 coleta = Coleta.objects.get_or_create(endereco=endereco[0], setor=setor[0], rota=line[4])
                 coleta_horario = ColetaHorario.objects.get_or_create(horario=horario[0], coleta=coleta[0])
 
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                     latitude = geocode[0]['geometry']['location']['lat']
                     longitude = geocode[0]['geometry']['location']['lng']
 
-                    p_nome = line[2]
+                    nome_min = line[2]
                     nome = line[2]
                     bairro = u'Não informado'
                     is_valid_area = True
@@ -86,7 +86,7 @@ if __name__ == '__main__':
                             if 'route' in types or 'bus_station' in types or 'transit_station' in types\
                                     or 'subway_station' in types or 'train_station' in types:
 
-                                p_nome = geocode[0]['address_components'][i]['short_name']
+                                nome_min = geocode[0]['address_components'][i]['short_name']
                                 nome = geocode[0]['address_components'][i]['long_name']
 
                             elif geocode[0]['address_components'][i]['types'][0] == 'neighborhood':
@@ -96,13 +96,13 @@ if __name__ == '__main__':
                     if is_valid_area:
                         try:
                             endereco = Endereco.objects.get_or_create(nome=nome, latitude=latitude, longitude=longitude,
-                                                                  p_nome=p_nome, bairro=bairro, csv_nome=line[2])
+                                                                  nome_min=nome_min, bairro=bairro, nome_bruto=line[2])
 
                         except IntegrityError:
                             endereco = (Endereco.objects.get(nome=nome), False)
                     else:
                         endereco = Endereco.objects.get_or_create(nome=line[2], latitude=latitude, longitude=longitude,
-                                                          p_nome=line[2], bairro=u'Não informado', csv_nome=line[2])
+                                                          nome_min=line[2], bairro=u'Não encontrado', nome_bruto=line[2])
                         is_valid_area = True
 
                     coleta = Coleta.objects.get_or_create(endereco=endereco[0], setor=setor[0], rota=line[4])

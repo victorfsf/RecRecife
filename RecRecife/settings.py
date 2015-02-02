@@ -57,7 +57,7 @@ ROOT_URLCONF = 'RecRecife.urls'
 
 WSGI_APPLICATION = 'RecRecife.wsgi.application'
 
-GOOGLE_API_SECRET_KEY = 'AIzaSyDLTVmPWjve5ZoX8AYYY2v7h4r2qdhjh9c'
+GOOGLE_API_SECRET_KEY = 'AIzaSyAxOR0QS_eqFEIP8u0nZi-4EVPhR0yV6Gg'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

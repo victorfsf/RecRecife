@@ -78,6 +78,7 @@ class Feedback(models.Model):
     email = models.EmailField(max_length=256, default='None')
     situacao = models.CharField(max_length=256)
     descricao = models.TextField(max_length=512, default='Sem descrição!')
+    endereco = models.ForeignKey(Endereco)
     ativo = models.BooleanField(default=True)
     resolvido = models.BooleanField(default=False)
 

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Rec²cife{% endblock %}
+{% block title %}Rec2cife{% endblock %}
 
 {% block head %}
     <script src="http://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_SECRET_KEY }}&sensor=true"></script>
@@ -23,6 +23,7 @@
                     return false;
                 }
             });
+
         });
     </script>
 
@@ -33,65 +34,109 @@
 {% endblock %}
 
 {% block body %}
-    <div id="map_canvas"></div>
-    <div class="rec-opaque" id="map_overlay"></div>
+    <div id="map_fixed">
+        <div id="map_canvas"></div>
+    </div>
+    <div id="map_overlay">
+        <div class="rec-opaque" id="map_area"></div>
+    </div>
     <div class="rec-content text-center" id="map_overlay_content">
-        <div class="col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1 col-lg-4 col-lg-offset-3"
-             style="margin-bottom: 5px;">
-            <div class="div-shadow">
-                <div class="input-group">
-                    <span class="input-group-addon"></span>
-                    <input type="text" placeholder="Pesquisar rua, avenida, praça, estrada, travessa..."
-                           autocomplete="off" class="form-control form-rec" id="searchBar" maxlength="200"/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" id="searchBtn">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                    </span>
+        <div id="mapPanel">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1 col-lg-4 col-lg-offset-3"
+                 style="margin-bottom: 5px;">
+                <div class="div-shadow">
+                    <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input type="text" placeholder="Pesquisar rua, avenida, praça, estrada, travessa..."
+                               autocomplete="off" class="form-control form-rec" id="searchBar" maxlength="200"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" id="searchBtn">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                        </span>
 
-                    <div class="panel panel-default panel-dropdown" id="dropdown_choices">
-                        <ul class="panel-list truncate" id="endList">
-                            {% if enderecos and enderecos|length > 0 %}
-                                {% for endereco in enderecos %}
-                                    {% if endereco.nome == endereco.nome_bruto %}
-                                        <li class="bad-location"><a href="javascript:void(0);"
-                                                                    onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
-                                            <span class="glyphicon glyphicon-question-sign"></span>
-                                            &nbsp;{{ endereco.nome }}
-                                        </a></li>
-                                    {% else %}
-                                        <li><a href="javascript:void(0);"
-                                               onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
-                                            <span class="glyphicon glyphicon-road"></span> &nbsp;{{ endereco.nome }}
-                                        </a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            {% elif query_data %}
-                                <li class="bad-location"><a href="javascript:void(0);"
-                                                            onclick="mapSearchByName('{{ query_data|safe }}', '{% static 'recrecife/images/no_recycle_marker.png' %}')">
-                                    <span class="glyphicon glyphicon-new-window"></span> &nbsp;{{ query_data }}
-                                </a></li>
-                            {% else %}
-                                <li class="bad-location"><a href="javascript:void(0);">
-                                    <span class="glyphicon glyphicon-search"></span> &nbsp;O campo de pesquisa está vazio!
-                                </a></li>
-                            {% endif %}
-                        </ul>
+                        <div class="panel panel-default panel-dropdown" id="dropdown_choices">
+                            <ul class="panel-list truncate" id="endList">
+                                {% if enderecos and enderecos|length > 0 %}
+                                    {% for endereco in enderecos %}
+                                        {% if endereco.nome == endereco.nome_bruto %}
+                                            <li class="bad-location"><a href="javascript:void(0);"
+                                                                        onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
+                                                <span class="glyphicon glyphicon-question-sign"></span>
+                                                &nbsp;{{ endereco.nome }}
+                                            </a></li>
+                                        {% else %}
+                                            <li><a href="javascript:void(0);"
+                                                   onclick="mapSearch({{ endereco.latitude|safe }}, {{ endereco.longitude|safe }}, '{{ endereco.nome|safe }}')">
+                                                <span class="glyphicon glyphicon-road"></span> &nbsp;{{ endereco.nome }}
+                                            </a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elif query_data %}
+                                    <li class="bad-location"><a href="javascript:void(0);"
+                                                                onclick="mapSearchByName('{{ query_data|safe }}', '{% static 'recrecife/images/no_recycle_marker.png' %}')">
+                                        <span class="glyphicon glyphicon-new-window"></span> &nbsp;{{ query_data }}
+                                    </a></li>
+                                {% else %}
+                                    <li class="bad-location"><a href="javascript:void(0);">
+                                        <span class="glyphicon glyphicon-search"></span> &nbsp;O campo de pesquisa está vazio!
+                                    </a></li>
+                                {% endif %}
+                            </ul>
 
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                <button class="btn btn-primary" type="button" onclick="gotoGMaps();" id="mapBtn">PESQUISAR NO MAPA</button>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
-            <button class="btn btn-primary" type="button" onclick="gotoGMaps();" id="mapBtn">PESQUISAR NO MAPA</button>
-        </div>
-        <div id="infoPanel" style="display: none;">
+        <div id="infoPanel" style="display: none;margin-top: 90px;">
             <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-3 col-lg-offset-3 text-left">
+                <div class="panel panel-default panel-rec{% if local.warning %}-warn{% endif %}">
+                        <div class="panel-heading">
+                            <div class="row text-left">
+                                <span class="col-xs-10 col-sm-11 col-md-10 col-lg-10 rec-shadow">
+                                    <span class="fa fa-recycle"></span> &nbsp;Informações da Coleta
+                                </span>
+                                <span class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
+                                    <button type="button" class="close" onclick="hideInfoPanel()">×</button>
+                                </span>
+                            </div>
+                        </div>
+                        <ul class="panel-body-list">
+                            {% for setor in setores %}
+                                <li class="li-title truncate text-center">
+                                    <b><span class="glyphicon glyphicon-home"></span> &nbsp;Setor: </b>
+                                    {{ setor.nome_setor }}
+                                </li>
+                                <li class="truncate">
+                                    <b><span class="glyphicon glyphicon-road"></span> &nbsp;Posição na Rota: </b>
+                                    {{ setor.rota }}º
+                                </li>
+                                <li class="li-title truncate">
+                                    <b><span class="fa fa-clock-o"></span> &nbsp;Intervalo: </b>
+                                    {{ setor.intervalo }} ({{ setor.turno }})
+                                </li>
+                                <li class="truncate">
+                                    <b><span class="fa fa-truck"></span> &nbsp;Frequência: </b>
+                                    {{ setor.frequencia }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <button class="panel-footer panel-footer-btn"  onclick="switchToMap({{ local.latitude|safe }}, {{ local.longitude|safe }}, '{{ local.nome|safe }}')">
+                            VER NO MAPA
+                        </button>
+                    </div>
+                </div>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3 text-left">
                 <div class="panel panel-default panel-rec{% if local.warning %}-warn{% endif %}">
                     <div class="panel-heading">
                         <div class="row text-left">
                             <span class="col-xs-10 col-sm-11 col-md-10 col-lg-10 rec-shadow">
-                                <span class="glyphicon glyphicon-road"></span> &nbsp;{{ local.nome }}
+                                {% if local.warning %}<span class="glyphicon glyphicon-question-sign"></span>{% else %}<span class="glyphicon glyphicon-road"></span>{% endif %}
+                                &nbsp;{{ local.nome }}
                             </span>
                             <span class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
                                 <button type="button" class="close" onclick="hideInfoPanel()">×</button>
@@ -111,38 +156,11 @@
                             <b><span class="glyphicon glyphicon-th-list"></span> &nbsp;Dado Bruto (Nome): </b>
                             {{ local.nome_bruto }}
                         </li>
-                        <li class="text-center truncate">
-                            <b><span class="fa fa-recycle"></span> &nbsp;Informações da Coleta </b>
-                        </li>
-                        <li class="li-title truncate">
-                            <b><span class="glyphicon glyphicon-home"></span> &nbsp;Setor: </b>
-                            {{ local.nome_setor }}
-                        </li>
-                        <li class="truncate">
-                            <b><span class="glyphicon glyphicon-road"></span> &nbsp;Rota: </b>
-                            {{ local.rota }}
-                        </li>
-                        <li class="li-title truncate">
-                            <b><span class="fa fa-clock-o"></span> &nbsp;Intervalo: </b>
-                            {{ local.intervalo }} ({{ local.turno }})
-                        </li>
-                        <li class="truncate">
-                            <b><span class="fa fa-truck"></span> &nbsp;Frequência: </b>
-                            {{ local.frequencia }}
-                        </li>
                     </ul>
-                    {% if local.warning %}
-                        <div class="panel-footer">
-                            CONHECE ESSE LUGAR? >>
-                        </div>
-                    {% else %}
-                        <button class="panel-footer panel-footer-btn" onclick="switchToMap({{ local.latitude|safe }}, {{ local.longitude|safe }}, '{{ local.nome|safe }}')">
-                            VER NO MAPA
-                        </button>
-                    {% endif %}
+                    <div class="panel-footer panel-footer-btn">
+                        AJUDE-NOS!
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3 text-left">
                 <div class="panel panel-default panel-rec{% if local.warning %}-warn{% endif %}">
                     <div class="panel-heading">
                         <div class="row text-left">
@@ -156,24 +174,24 @@
                     </div>
                     <form class="form-horizontal" method="POST">
                         <div class="panel-body">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    {{ feedback_form.nome }}
-                                    {% if feedback_form.nome.errors %}
-                                        {% for error in feedback_form.nome.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    {% endif %}
-                                </div>
-                                <div class="form-group">
-                                    {{ feedback_form.email }}
-                                </div>
-                                <div class="form-group">
-                                    {{ feedback_form.erros }}
-                                </div>
-                                <div class="form-group">
-                                    {{ feedback_form.descricao }}
-                                </div>
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ feedback_form.nome }}
+                                {% if feedback_form.nome.errors %}
+                                    {% for error in feedback_form.nome.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ feedback_form.email }}
+                            </div>
+                            <div class="form-group">
+                                {{ feedback_form.erros }}
+                            </div>
+                            <div class="form-group">
+                                {{ feedback_form.descricao }}
+                            </div>
                         </div>
                         <button class="panel-footer panel-footer-btn">
                             ENVIAR
@@ -182,8 +200,60 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-
+        {% if first_time %}
+            <script type="text/javascript">
+                $('#mapPanel').hide();
+            </script>
+            <div id="startInfo" style="margin-top: 90px;">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <div class="panel panel-default panel-rec-info">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-road"></span> &nbsp;Bem-vindo ao Rec2cife!
+                        </div>
+                        <div class="panel-body  text-justify">
+                            <div class="col-lg-4" style="padding-left:0;">
+                                <span class="fa fa-recycle" style="font-size:115pt;color:#289e65;text-shadow: 4px 4px #e2e2e2;"></span>
+                            </div>
+                            <div class="col-lg-8">
+                                O <b>Rec2cife</b> (ou RecRecife) é uma aplicação criada a partir da utilização de dados relacionados ao
+                                <b><a href="http://dados.recife.pe.gov.br/dataset/roteiro-de-coleta/">Roteiro de Coleta de Resíduos</a></b> fornecidos pelo
+                                <b><a href="http://dados.recife.pe.gov.br/">Portal de Dados Abertos da Cidade do Recife</a></b>.
+                            </div>
+                            <div class="col-lg-12">
+                                <br>
+                                Através do <b>Rec2cife</b>, você poderá saber <i>se a coleta seletiva passa em sua rua, quais os locais mais
+                                próximos de você em que há a coleta</i> e também poderá <b>nos ajudar
+                                a manter as informações do sistema atualizadas</b>!
+                            </div>
+                        </div>
+                        <button class="panel-footer panel-footer-btn" onclick="startApp()">
+                            COMEÇAR A USAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <div id="noInfoPanel" style="margin-top: 90px;display: none;">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="panel panel-default panel-rec-info">
+                    <div class="panel-heading text-left">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                        &nbsp; Nada encontrado!
+                    </div>
+                    <div class="panel-body text-justify">
+                        <div class="col-lg-4" style="padding-left: 0;">
+                            <span class="glyphicon glyphicon-map-marker" style="font-size:115pt;color:#289e65;text-shadow: 4px 4px #e2e2e2;"></span>
+                        </div>
+                        <div class="col-lg-8">
+                            A sua pesquisa "{{ query_data }}" não consta como parte do roteiro de coleta em nossa base de dados!
+                            Mas não desista, pois ainda podes utilizar do <b>Rec2cife para encontrar os locaais mais próximos que façam parte do roteiro</b>!
+                        </div>
+                    </div>
+                    <button class="panel-footer panel-footer-btn" onclick="infoSearch('{{ query_data|safe }}', '{% static 'recrecife/images/you_are_here.png' %}')">
+                        PROCURAR NO MAPA
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

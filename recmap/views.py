@@ -17,20 +17,50 @@ def view_index(request):
     q = None
     enderecos_json = []
     local = None
+    setores = []
+    start = False
 
-    if request.method == 'GET':
+    if request.method == 'POST':
+
+        feedback_form = FeedbackForm(data=request.POST)
+
+        if feedback_form.is_valid():
+
+            feedback = feedback_form.save(commit=False)
+
+            feedback.situacao = feedback_form.cleaned_data.get('erros')
+            feedback.enviado_por = feedback_form.cleaned_data.get('nome')
+
+            feedback.save()
+
+        return HttpResponseRedirect(reverse('index') + '?s=1')
+    else:
+        feedback_form = FeedbackForm()
         cursor = connection.cursor()
+
+        if 's' in request.GET:
+            start_get = request.GET.get('s')
+
+            if start_get == '1':
+                start = True
 
         if 'q' in request.GET:
             q = request.GET.get('q')
 
             if q:
 
-                query_str = "SELECT nome, nome_bruto, latitude, longitude " \
-                            "FROM recmap_endereco " \
+                query_str = "SELECT nome, nome_min, nome_bruto, bairro, latitude, longitude, " \
+                            "intervalo, turno, nome_setor, rota, frequencia " \
+                            "FROM recmap_endereco AS endr " \
+                            "INNER JOIN recmap_coleta AS col ON endr.id = col.endereco_id " \
+                            "INNER JOIN recmap_setor AS setor ON col.setor_id = setor.id " \
+                            "INNER JOIN recmap_coletahorario AS ch ON ch.coleta_id = col.id " \
+                            "INNER JOIN recmap_horario AS hor ON hor.id = ch.horario_id " \
                             "WHERE nome LIKE '%%%s%%' " \
                             "OR nome_min LIKE '%%%s%%' " \
-                            "OR nome_bruto LIKE '%%%s%%';" % (q, q ,q)
+                            "OR nome_bruto LIKE '%%%s%%' " \
+                            "GROUP BY nome " \
+                            "ORDER BY endr.id;"% (q, q ,q)
 
                 cursor.execute(query_str)
                 enderecos = dictfetchall(cursor)[:10]
@@ -48,8 +78,10 @@ def view_index(request):
                         "WHERE endr.nome = '%s'" % l
 
             cursor.execute(query_str)
+
             try:
-                local = dictfetchall(cursor)[0]
+                setores = dictfetchall(cursor)
+                local = setores[0]
 
                 if local['nome'] == local['nome_bruto'] and local['nome_min'] == local['nome_bruto']:
                     local['warning'] = True
@@ -60,22 +92,6 @@ def view_index(request):
 
         cursor.close()
 
-    if request.method == 'POST':
-        feedback_form = FeedbackForm(data=request.POST)
-
-        if feedback_form.is_valid():
-            print 'hey'
-            feedback = feedback_form.save(commit=False)
-
-            feedback.situacao = feedback_form.cleaned_data.get('erros')
-            feedback.enviado_por = feedback_form.cleaned_data.get('nome')
-
-            feedback.save()
-
-            return HttpResponseRedirect(reverse('index'))
-    else:
-        feedback_form = FeedbackForm()
-
     list_enderecos = Endereco.objects.iterator()
 
     for endereco in list_enderecos:
@@ -84,8 +100,10 @@ def view_index(request):
 
     markers_json = json.dumps(enderecos_json)
 
+    args['first_time'] = not start
     args['feedback_form'] = feedback_form
     args['local'] = local
+    args['setores'] = setores
     args['markers'] = markers_json
     args['query_data'] = q
     args['enderecos'] = enderecos

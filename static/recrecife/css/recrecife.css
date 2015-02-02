@@ -9,6 +9,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
+    bottom: 0;
 }
 
 textarea {
@@ -163,8 +164,7 @@ a:hover, a:focus {
     display: none;
 }
 
-.panel-rec, .panel-rec-warn {
-    margin-top: 90px;
+.panel-rec, .panel-rec-warn, .panel-rec-info {
     border: 0;
     -webkit-box-shadow: 4px 4px rgba(170, 170, 170, 0.5);
     box-shadow: 4px 4px rgba(170, 170, 170, 0.5);
@@ -176,7 +176,44 @@ a:hover, a:focus {
     border: 0;
     border-bottom: 3px solid #2a8f53;
     color: #fff;
+    font-weight: 700;
 }
+
+.panel-rec-info .panel-heading {
+    background: #4585f5;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 3px solid #4470d6;
+    color: #fff;
+    font-weight: 700;
+}
+
+.panel-rec-info .panel-body {
+    color: #555;
+    padding: 30px 40px 40px 40px;
+}
+
+.panel-rec-info .panel-footer-btn {
+    width: 100%;
+    margin-top: -10px;
+    border: 0;
+    border-bottom: 3px solid #4470d6;
+    background: #4585f5;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 0;
+}
+
+.panel-rec-info .panel-footer-btn:hover {
+    border-bottom: 3px solid #2a8f53;
+    background: #289e65;
+}
+
+.panel-rec-info .panel-footer-btn:focus {
+    border-bottom: 3px solid #e1a528;
+    background: #fabe28;
+}
+
 .panel-rec-warn > ul.panel-body-list,
 .panel-rec > ul.panel-body-list {
     padding: 0;
@@ -212,18 +249,6 @@ a:hover, a:focus {
     color: #555;
 }
 
-.panel-rec-warn .panel-footer {
-    width: 100%;
-    margin-top: -10px;
-    border: 0;
-    border-bottom: 3px solid #c03d32;
-    background: #d33d33;
-    text-align: center;
-    color: #fff;
-    font-weight: 900;
-    border-radius: 0;
-}
-
 .panel-rec .panel-footer-btn {
     width: 100%;
     margin-top: -10px;
@@ -243,6 +268,18 @@ a:hover, a:focus {
 .panel-rec .panel-footer-btn:focus {
     border-bottom: 3px solid #e1a528;
     background: #fabe28;
+}
+
+.panel-rec-warn .panel-footer {
+    width: 100%;
+    margin-top: -10px;
+    border: 0;
+    border-bottom: 3px solid #c03d32;
+    background: #d33d33;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 0;
 }
 
 .panel-rec-warn .panel-body-list > li {
@@ -298,9 +335,10 @@ a:hover, a:focus {
     border: 0;
     border-bottom: 3px solid #c03d32;
     color: #fff;
+    font-weight: 700;
 }
 
-.panel-rec, .panel-rec-warn, .panel-dropdown {
+.panel-rec, .panel-rec-warn, .panel-rec-info, .panel-dropdown {
     border-radius: 0;
 }
 
@@ -414,7 +452,7 @@ a:hover, a:focus {
     word-wrap: break-word;
 }
 
-#map_overlay, #map_overlay_content {
+#map_overlay_content {
     position: absolute;
     top: 70px;
     left: 0;
@@ -422,6 +460,28 @@ a:hover, a:focus {
     height: 0;
 }
 
+#map_area {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
 #map_canvas {
-    margin-top: -20px;
+    width: 100%;
+}
+
+#map_fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#map_overlay {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
